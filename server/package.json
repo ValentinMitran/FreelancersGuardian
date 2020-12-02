@@ -1,0 +1,32 @@
+{
+  "name": "fg-server",
+  "version": "1.0.0",
+  "description": "Freelancer's Guardian Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "cd ../web && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/ValentinMitran/FreelancersGuardian"
+  },
+  "author": "Valentin Mitran",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.1",
+    "stripe": "^8.126.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
