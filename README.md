@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-<img src="https://github.com/ValentinMitran/FreelancersGuardian/blob/master/web/logo.png" alt="Freelancer's Guardian" width="300">
+<img src="https://github.com/ValentinMitran/FreelancersGuardian/blob/master/logo.png" alt="Freelancer's Guardian" width="300">
   <br>
 Freelancer's Guardian
   <br>
