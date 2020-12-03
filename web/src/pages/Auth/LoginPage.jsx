@@ -74,7 +74,7 @@ function LoginPage() {
             />
             <button type="submit">Login</button>
           </form>
-          <Link to="/register">REGISTER</Link>
+          <Link to="/register">Register</Link>
         </div>
       </div>
     </>
