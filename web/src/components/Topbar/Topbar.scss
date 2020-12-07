@@ -1,0 +1,54 @@
+.topbar {
+  width: 100vw;
+  height: 54px;
+  background-color: #060818;
+  position: absolute;
+  top: 0;
+  color: #888ea8;
+  display: flex;
+  align-items: center;
+  input {
+    background-color: #0e1726;
+    border: 1px solid #888ea8;
+    color: white;
+    padding: 7px 10px;
+    margin-left: 135px;
+    border-radius: 6px;
+  }
+  img {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+  }
+  #logo {
+    background-color: white;
+    padding: 2px;
+    box-sizing: border-box;
+    cursor: auto;
+  }
+  svg {
+    cursor: pointer;
+    font-size: 1.6rem;
+    margin-right: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+  div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+  }
+  .logo-and-search {
+    left: 10px;
+  }
+  .user-area {
+    right: 10px;
+  }
+}

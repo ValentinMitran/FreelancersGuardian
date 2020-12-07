@@ -1,0 +1,47 @@
+.sidebar {
+  width: 212px;
+  height: calc(100vh - 54px);
+  position: absolute;
+  z-index: 2;
+  border-right: 1px solid #0e1726;
+  top: 54px;
+  left: 0;
+  background-color: #060818;
+  padding: 20px;
+  box-sizing: border-box;
+  a {
+    width: 100%;
+    padding: 10px 0 10px 35px;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 4px;
+    color: #506690;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: border-radius 1s, background-color 1s, color 1s;
+
+    &:hover {
+      color: white;
+      background-color: #3b3f5c;
+      border-radius: 6px;
+    }
+    svg {
+      font-size: 1.1rem;
+      position: absolute;
+    }
+    #left {
+      font-size: 1.4rem;
+      left: 5px;
+    }
+    #right {
+      right: 0;
+    }
+  }
+  .active {
+    color: white;
+    background-color: #3b3f5c;
+    border-radius: 6px;
+  }
+}
