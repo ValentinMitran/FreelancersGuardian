@@ -1,0 +1,31 @@
+.landing-page {
+  width: 100vw;
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: red;
+
+  header {
+    width: 100%;
+    height: 56px;
+    background-color: black;
+    nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      a {
+        color: white;
+        text-decoration: none;
+        margin-right: 10px;
+        &:hover {
+          color: yellow;
+        }
+      }
+    }
+  }
+  footer {
+    width: 100%;
+    height: 56px;
+    background-color: yellow;
+  }
+}
