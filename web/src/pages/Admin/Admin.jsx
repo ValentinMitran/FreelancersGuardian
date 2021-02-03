@@ -14,6 +14,12 @@ import "./Admin.scss";
 import Topbar from "../../components/Topbar/Topbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Main from "../../components/Main/Main";
+import Dashboard from "./Dashboard/Dashboard";
+import Messages from "./Messages/Messages";
+import Projects from "./Projects/Projects";
+import Clients from "./Clients/Clients";
+import Invoices from "./Invoices/Invoices";
+import Estimates from "./Estimates/Estimates";
 
 const Admin = () => {
   return (
@@ -72,13 +78,23 @@ const Admin = () => {
       <Main>
         <Switch>
           <Route exact path="/">
-            Dashboard
+            <Dashboard />
           </Route>
-          <Route path="/messages">Messages</Route>
-          <Route path="/projects">Projects</Route>
-          <Route path="/clients">Clients</Route>
-          <Route path="/invoices">Invoices</Route>
-          <Route path="/estimates">Estimates</Route>
+          <Route path="/messages">
+            <Messages />
+          </Route>
+          <Route path="/projects">
+            <Projects />
+          </Route>
+          <Route path="/clients">
+            <Clients />
+          </Route>
+          <Route path="/invoices">
+            <Invoices />
+          </Route>
+          <Route path="/estimates">
+            <Estimates />
+          </Route>
         </Switch>
       </Main>
     </>
