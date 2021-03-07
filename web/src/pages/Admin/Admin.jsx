@@ -8,6 +8,7 @@ import {
   MdPeople,
   MdNotificationsNone,
   MdReceipt,
+  MdLoyalty,
 } from "react-icons/md";
 import { ImRocket } from "react-icons/im";
 import "./Admin.scss";
@@ -20,6 +21,7 @@ import Projects from "./Projects/Projects";
 import Clients from "./Clients/Clients";
 import Invoices from "./Invoices/Invoices";
 import Estimates from "./Estimates/Estimates";
+import Services from "./Services/Services";
 
 const Admin = () => {
   return (
@@ -59,6 +61,11 @@ const Admin = () => {
           Projects
           <MdKeyboardArrowRight id="right" />
         </NavLink>
+        <NavLink to="/services" activeClassName="active">
+          <MdLoyalty id="left" />
+          Services
+          <MdKeyboardArrowRight id="right" />
+        </NavLink>
         <NavLink to="/clients" activeClassName="active">
           <MdPeople id="left" />
           Clients
@@ -82,6 +89,9 @@ const Admin = () => {
           </Route>
           <Route path="/messages">
             <Messages />
+          </Route>
+          <Route path="/services">
+            <Services />
           </Route>
           <Route path="/projects">
             <Projects />
