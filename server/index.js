@@ -7,6 +7,15 @@ dotenv.config();
 //Import Routes
 const authRoute = require("./routes/auth");
 
+//Admin Routes
+const clientsRoute = require("./routes/admin/clients");
+
+
+//Client Routes
+
+
+
+
 //Connect to DB
 mongoose.connect(
   process.env.DB_CONNECT,
@@ -19,5 +28,11 @@ app.use(express.json());
 
 //Route Middlewares
 app.use("/api/user", authRoute);
+
+//Admin Routes
+app.use("/api/admin/clients", clientsRoute);
+
+//Client Routes
+
 
 app.listen(process.env.PORT || 3001, () => console.log("Express running"));

@@ -1,0 +1,31 @@
+.services {
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  input,
+  textarea {
+    margin: 10px 0 0 0;
+    border: 1px solid white;
+    background-color: #3b3f5c;
+    padding: 10px;
+
+    &::placeholder {
+      color: #060818;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+  .actions {
+    button {
+      padding: 5px 10px;
+      margin: 10px 10px 0 0;
+      color: #060818;
+      background-color: #3b3f5c;
+      border: 1px solid white;
+      cursor: pointer;
+    }
+  }
+}
