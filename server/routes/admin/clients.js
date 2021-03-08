@@ -6,8 +6,9 @@ const User = require("../../models/User");
 
 router.get("/getClients", verifyToken, async (req, res) => {
   const decoded = jwt.decode(req.header("authToken"));
-  const user = await User.findOne({ _id: decoded._id }, { role: 1 });
-  res.send(user.role);
+  const users = await User.find({}, { username: 1 });
+  console.log(users);
+  res.send(users);
 });
 
 module.exports = router;
