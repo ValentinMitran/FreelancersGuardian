@@ -9,12 +9,9 @@ const authRoute = require("./routes/auth");
 
 //Admin Routes
 const clientsRoute = require("./routes/admin/clients");
-
+const serviceRoute = require("./routes/admin/service");
 
 //Client Routes
-
-
-
 
 //Connect to DB
 mongoose.connect(
@@ -31,8 +28,8 @@ app.use("/api/user", authRoute);
 
 //Admin Routes
 app.use("/api/admin/clients", clientsRoute);
+app.use("/api/admin/service", serviceRoute);
 
 //Client Routes
-
 
 app.listen(process.env.PORT || 3001, () => console.log("Express running"));
