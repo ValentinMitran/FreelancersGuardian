@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import New from "./New/New";
 import "./Services.scss";
+import View from "./View/View";
 
 const Services = () => {
   let { path, url } = useRouteMatch();
@@ -9,10 +10,9 @@ const Services = () => {
   return (
     <>
       <div className="services">
-        Services Section
         <Switch>
           <Route exact path={path}>
-            <h3>Dashboard edit services.</h3>
+            <View />
           </Route>
           <Route path={`${path}/new`}>
             <New />
