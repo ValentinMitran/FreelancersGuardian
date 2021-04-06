@@ -6,13 +6,11 @@ const LandingPage = () => {
     <>
       <div className="landing-page">
         <header>
+          <img src="https://github.com/ValentinMitran/FreelancersGuardian/raw/master/logo.png" alt=""/>
           <nav>
-            <a href="#test">Test</a>
-            <a href="#test">Test</a>
-            <a href="#test">Test</a>
-            <a href="#test">Test</a>
-            <a href="#test">Test</a>
-            <a href="#test">Test</a>
+            <a href="#test">About</a>
+            <a href="#test">Services</a>
+            <a href="#test" id="login">Login</a>
           </nav>
         </header>
         <footer>

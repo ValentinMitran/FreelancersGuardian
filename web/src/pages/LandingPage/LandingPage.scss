@@ -2,12 +2,21 @@
   width: 100vw;
   max-width: 100%;
   min-height: 100vh;
-  background-color: red;
-
+  background-color: black;
+  position: relative;
   header {
     width: 100%;
     height: 56px;
-    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    position: relative;
+    background-color: rgb(58, 58, 58);
+    img {
+      height: 100%;
+      position: absolute;
+      left: 10px;
+    }
     nav {
       height: 100%;
       display: flex;
@@ -23,9 +32,16 @@
       }
     }
   }
+  #login {
+    border: 2px solid yellow;
+    padding: 5px 20px;
+    border-radius: 20px;
+  }
   footer {
     width: 100%;
     height: 56px;
-    background-color: yellow;
+    background-color: rgb(63, 63, 63);
+    position: absolute;
+    bottom: 0;
   }
 }
