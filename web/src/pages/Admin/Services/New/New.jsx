@@ -70,6 +70,16 @@ const New = ({ history }) => {
             onChange={(e) => setPrice(e.target.value)}
           />
         </form>
+        Add-ons +
+        <br />
+        <input type="text" placeholder="name" />
+        <input type="number" name="" id="" placeholder="price" />
+        <br />
+        <input type="text" placeholder="name" />
+        <input type="number" name="" id="" placeholder="price" />
+        <br />
+        <input type="text" placeholder="name" />
+        <input type="number" name="" id="" placeholder="price" />
         <div className="actions">
           <button type="submit">Reset</button>
           <button type="submit" onClick={postNewService}>
