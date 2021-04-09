@@ -50,13 +50,18 @@ Landing Page         |  Admin Dashboard | Client View
 
 Web API| URL | Type | Description
 ------------ | ------------- |------------- | -------------
-User Register| /api/v1/user/register | emit | -
-User Login | /api/v1/user/login | emit | -
-User Logout | /api/v1/user/logout | emit | -
+User Register| /api/user/register | post | -
+User Login | /api/user/login | post | -
+User Logout | /api/user/logout | post | -
+User isLoggedIn | /api/user/isLoggedIn | get | -
+
 
 
 ### Admin Dashboard API
 
 Web API| URL | Type | Description
 ------------ | ------------- |------------- | -------------
-PLACEHOLDER| /api/v1/PLACEHOLDER | emit | -
+List clients | /api/admin/clients/getClients | get | -
+Get services | /api/admin/service/ | get | -
+New service | /api/admin/service/new | post | -
+
