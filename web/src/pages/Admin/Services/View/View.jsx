@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
 import "./View.scss";
 
-const View = () => {
+const View = ({ history }) => {
   const [services, setServices] = useState([]);
 
   const getServices = async () => {
@@ -27,10 +28,12 @@ const View = () => {
     <div>
       <h3>Dashboard edit services.</h3>
       {services.map((x) => (
-        <div>{x.name}</div>
+        <div onClick={() => history.push(`/services/edit/${x._id}`)}>
+          {x.name}
+        </div>
       ))}
     </div>
   );
 };
 
-export default View;
+export default withRouter(View);
