@@ -1,6 +1,7 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
 
-module.exports = function (req, res, next) {
+const verifyToken = (req, res, next) => {
   const token = req.header("authToken");
   if (!token) return res.status(401).send("Access Denied");
 
@@ -12,3 +13,5 @@ module.exports = function (req, res, next) {
     res.status(400).send("Invalid Token");
   }
 };
+
+export = verifyToken;

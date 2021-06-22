@@ -1,20 +1,19 @@
-const router = require("express").Router();
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
-const verifyToken = require("../utils/verifyToken");
-const User = require("../models/User");
-const {
-  registerValidation,
-  loginValidation,
-} = require("./../utils/dataValidation");
+import { Router } from "express";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
+import verifyToken from "../utils/verifyToken";
+import User from "../models/User";
+import loginValidation from "./../utils/loginValidation";
+import registerValidation from "./../utils/registerValidation";
+const authRouter = Router();
 
-router.get("/isLoggedIn", verifyToken, async (req, res) => {
-  const decoded = jwt.decode(req.header("authToken"));
-  const user = await User.findOne({ _id: decoded._id }, { role: 1 });
+authRouter.get("/isLoggedIn", verifyToken, async (req, res) => {
+  const decoded: any = jwt.decode(req.header("authToken"));
+  const user: any = await User.findOne({ _id: decoded._id }, { role: 1 });
   res.send(user.role);
 });
 
-router.post("/register", async (req, res) => {
+authRouter.post("/register", async (req, res) => {
   const { error } = registerValidation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
   const treatedUsername = req.body.username.toLowerCase().replace(/\s/g, "");
@@ -37,12 +36,13 @@ router.post("/register", async (req, res) => {
     res.status(400).send(err);
   }
 });
+/* @ts-ignore */
 
-router.post("/login", async (req, res) => {
+authRouter.post("/login", async (req, res) => {
   const { error } = loginValidation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const user = await User.findOne({ username: req.body.username });
+  const user: any = await User.findOne({ username: req.body.username });
   if (!user) return res.status(400).send("Username doesnt exist");
 
   const validPass = await bcrypt.compare(req.body.password, user.password);
@@ -55,8 +55,8 @@ router.post("/login", async (req, res) => {
   res.header("authToken", token).send();
 });
 
-router.post("/logout", (req, res) => {
+authRouter.post("/logout", (req, res) => {
   res.send(false);
 });
 
-module.exports = router;
+export default authRouter;

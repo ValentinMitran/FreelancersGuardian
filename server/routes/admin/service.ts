@@ -1,16 +1,16 @@
-const router = require("express").Router();
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
-const verifyToken = require("../../utils/verifyToken");
-const Service = require("../../models/admin/Service");
+import { Router } from "express";
+import verifyToken from "../../utils/verifyToken";
+import Service from "../../models/admin/Service";
 
-router.get("/", verifyToken, async (req, res) => {
+const serviceRouter = Router();
+
+serviceRouter.get("/", verifyToken, async (req, res) => {
   const services = await Service.find({}, {});
   console.log(services);
   res.send(services);
 });
 
-router.post("/new", verifyToken, async (req, res) => {
+serviceRouter.post("/new", verifyToken, async (req, res) => {
   const newService = new Service({
     name: req.body.name,
     description: req.body.description,
@@ -26,4 +26,4 @@ router.post("/new", verifyToken, async (req, res) => {
   }
 });
 
-module.exports = router;
+export default serviceRouter;

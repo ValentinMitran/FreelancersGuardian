@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const serviceSchema = new mongoose.Schema({
   name: {
@@ -10,9 +10,7 @@ const serviceSchema = new mongoose.Schema({
   price: {
     type: String,
   },
-  extras: {
-    
-  },
+  extras: {},
 });
 
-module.exports = mongoose.model("Service", serviceSchema);
+export default mongoose.model("Service", serviceSchema);
