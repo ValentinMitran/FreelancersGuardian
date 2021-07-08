@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Clients.scss";
 
 const Clients = () => {
-  const [clients, setClients] = useState([]);
+  const [clients, setClients] = useState<any>([]);
 
   const getClients = async () => {
     let response = await fetch("/api/admin/clients/getClients", {
@@ -11,7 +11,7 @@ const Clients = () => {
         "Content-Type": "application/json",
         authToken: localStorage.authToken,
       },
-    }).catch((err) => {
+    }).catch((err): any => {
       alert(err);
     });
     const data = await response.json();
@@ -26,7 +26,7 @@ const Clients = () => {
     <>
       <div className="clients">
         Clients Section
-        {clients.map((x) => (
+        {clients.map((x: any) => (
           <div>{x.username}</div>
         ))}
       </div>

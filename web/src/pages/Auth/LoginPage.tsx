@@ -13,7 +13,7 @@ function LoginPage() {
     localStorage.authToken ? setIsLoggedIn(true) : setIsLoading(false);
   }, []);
 
-  const submitForm = async (e) => {
+  const submitForm = async (e: any) => {
     e.preventDefault();
 
     let response = await fetch("/api/user/login", {
@@ -25,7 +25,7 @@ function LoginPage() {
         username: username,
         password: password,
       }),
-    }).catch((err) => {
+    }).catch((err): any => {
       alert(err);
     });
     if (response.headers.get("authToken")) {
@@ -60,7 +60,7 @@ function LoginPage() {
               name="username"
               id="username"
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e: any) => setUsername(e.target.value)}
               placeholder="Username..."
             />
             <input
@@ -69,7 +69,7 @@ function LoginPage() {
               name="password"
               id="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e: any) => setPassword(e.target.value)}
               placeholder="Password..."
             />
             <button type="submit">Login</button>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Admin from "../pages/Admin/Admin";
 import Client from "../pages/Client/Client";
-import LandingPage from "./../pages/LandingPage/LandingPage";
+import LandingPage from "../pages/LandingPage/LandingPage";
 
 const PrivateRoutes = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,7 +19,7 @@ const PrivateRoutes = () => {
         "Content-Type": "application/json",
         authToken: localStorage.authToken,
       },
-    }).catch((err) => {
+    }).catch((err): any => {
       alert(err);
     });
     if (response.ok === true) {

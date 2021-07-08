@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Edit.scss";
 
-const Edit = (props) => {
+const Edit = (props: any) => {
   const [data, setData] = useState([]);
 
   const submitEdit = async () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Sidebar.scss";
 
-const Sidebar = ({ children }) => {
+const Sidebar = ({ children }: any) => {
   return (
     <>
       <div className="sidebar">{children}</div>

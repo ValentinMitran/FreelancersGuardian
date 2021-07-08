@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import "./New.scss";
 import { toast } from "react-toastify";
 
-const New = ({ history }) => {
+const New = ({ history }: any) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(1);
@@ -18,7 +18,7 @@ const New = ({ history }) => {
     },
   ]);
 
-  const postNewService = async (e) => {
+  const postNewService = async (e: any) => {
     e.preventDefault();
     let response = await fetch("/api/admin/service/new", {
       method: "Post",
@@ -32,7 +32,7 @@ const New = ({ history }) => {
         price: price,
         extras: extras,
       }),
-    }).catch((err) => {
+    }).catch((err): any => {
       alert(err);
     });
     if (response.ok) {
@@ -50,16 +50,16 @@ const New = ({ history }) => {
             id=""
             placeholder="Name"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e: any) => setName(e.target.value)}
           />
           <textarea
             name="description"
             id=""
-            cols="30"
-            rows="10"
+            cols={30}
+            rows={10}
             placeholder="Description"
             value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={(e: any) => setDescription(e.target.value)}
           />
           <input
             type="number"
@@ -67,7 +67,7 @@ const New = ({ history }) => {
             id=""
             min="1"
             value={price}
-            onChange={(e) => setPrice(e.target.value)}
+            onChange={(e: any) => setPrice(e.target.value)}
           />
         </form>
         Add-ons +
@@ -82,7 +82,7 @@ const New = ({ history }) => {
         <input type="number" name="" id="" placeholder="price" />
         <div className="actions">
           <button type="submit">Reset</button>
-          <button type="submit" onClick={postNewService}>
+          <button type="submit" onClick={() => postNewService}>
             Submit
           </button>
         </div>

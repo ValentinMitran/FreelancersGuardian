@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import "./View.scss";
 
-const View = ({ history }) => {
+const View = ({ history }: any) => {
   const [services, setServices] = useState([]);
 
   const getServices = async () => {
@@ -12,7 +12,7 @@ const View = ({ history }) => {
         "Content-Type": "application/json",
         authToken: localStorage.authToken,
       },
-    }).catch((err) => {
+    }).catch((err): any => {
       alert(err);
     });
     if (response.ok) {
@@ -27,7 +27,7 @@ const View = ({ history }) => {
   return (
     <div>
       <h3>Dashboard edit services.</h3>
-      {services.map((x) => (
+      {services.map((x: any) => (
         <div onClick={() => history.push(`/services/edit/${x._id}`)}>
           {x.name}
         </div>

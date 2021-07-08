@@ -3,7 +3,7 @@ import { Link, Redirect, withRouter } from "react-router-dom";
 import "./Auth.scss";
 import { toast } from "react-toastify";
 
-function RegisterPage({ history }) {
+function RegisterPage({ history }: any) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,7 +13,7 @@ function RegisterPage({ history }) {
     localStorage.authToken ? setIsLoggedIn(true) : setIsLoading(false);
   }, []);
 
-  const submitForm = async (e) => {
+  const submitForm = async (e: any) => {
     e.preventDefault();
 
     let response = await fetch("/api/user/register", {
@@ -25,7 +25,7 @@ function RegisterPage({ history }) {
         username: username,
         password: password,
       }),
-    }).catch((err) => {
+    }).catch((err): any => {
       alert(err);
     });
     response = await response.text();
@@ -58,7 +58,7 @@ function RegisterPage({ history }) {
               name="username"
               id="username"
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e: any) => setUsername(e.target.value)}
               placeholder="Username..."
             />
             <input
@@ -67,7 +67,7 @@ function RegisterPage({ history }) {
               name="password"
               id="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e: any) => setPassword(e.target.value)}
               placeholder="Password..."
             />
             <button type="submit">Register</button>
