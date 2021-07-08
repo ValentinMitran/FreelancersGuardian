@@ -21,6 +21,7 @@ mongoose
 
 // Import Routes
 import authRoute from "./routes/auth";
+import walletRoute from "./routes/wallet";
 
 // Admin Routes
 import clientsRoute from "./routes/admin/clients";
@@ -33,6 +34,7 @@ app.use(express.json());
 
 // Route Middlewares
 app.use("/api/user", authRoute);
+app.use("/api/wallet", walletRoute);
 
 // Admin Routes
 app.use("/api/admin/clients", clientsRoute);
