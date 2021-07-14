@@ -7,16 +7,7 @@ const New = ({ history }: any) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(1);
-  const [extras, setExtras] = useState([
-    {
-      name: "Revisions",
-      price: "10",
-    },
-    {
-      name: "Pages",
-      price: "10",
-    },
-  ]);
+  const [extras, setExtras] = useState<any>([]);
 
   const postNewService = async (e: any) => {
     e.preventDefault();
@@ -36,8 +27,19 @@ const New = ({ history }: any) => {
       alert(err);
     });
     if (response.ok) {
-      alert("worked");
+      toast.success("Worked");
     }
+  };
+
+  const handleChange = (e, indexItem) => {
+    let updatedList = extras.map((item, index) => {
+      if (index === indexItem) {
+        return { ...item, [e.target.name]: e.target.value };
+      }
+      return item;
+    });
+
+    setExtras(updatedList);
   };
 
   return (
@@ -70,19 +72,37 @@ const New = ({ history }: any) => {
             onChange={(e: any) => setPrice(e.target.value)}
           />
         </form>
-        Add-ons +
-        <br />
-        <input type="text" placeholder="name" />
-        <input type="number" name="" id="" placeholder="price" />
-        <br />
-        <input type="text" placeholder="name" />
-        <input type="number" name="" id="" placeholder="price" />
-        <br />
-        <input type="text" placeholder="name" />
-        <input type="number" name="" id="" placeholder="price" />
+        <span
+          onClick={() =>
+            setExtras((prevExtras) => [...prevExtras, { name: "", price: "" }])
+          }
+        >
+          Add-ons +
+        </span>
+        {extras.map((x, index) => (
+          <>
+            <br />
+            <input
+              type="text"
+              placeholder="name"
+              name="name"
+              value={x.name}
+              onChange={(e) => handleChange(e, index)}
+            />
+            <input
+              type="number"
+              name="price"
+              id=""
+              placeholder="price"
+              value={x.price}
+              onChange={(e) => handleChange(e, index)}
+            />
+          </>
+        ))}
+
         <div className="actions">
           <button type="submit">Reset</button>
-          <button type="submit" onClick={() => postNewService}>
+          <button type="submit" onClick={(e) => postNewService(e)}>
             Submit
           </button>
         </div>
