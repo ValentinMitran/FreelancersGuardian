@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 
 const Edit = (props: any) => {
   let { topicId } = useParams<any>();
+  const [serviceId, setServiceId] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(1);
@@ -20,6 +21,7 @@ const Edit = (props: any) => {
         authToken: localStorage.authToken,
       },
       body: JSON.stringify({
+        _id: serviceId,
         name: name,
         description: description,
         price: price,
@@ -53,6 +55,7 @@ const Edit = (props: any) => {
       setDescription(response.description);
       setPrice(response.price);
       setExtras(response.extras);
+      setServiceId(response._id);
     }
     console.log(response);
     setLoading(false);
